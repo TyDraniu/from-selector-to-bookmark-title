@@ -1,0 +1,12 @@
+{
+  "title": "Post number",
+  "name": "post-number",
+  "version": "0.0.1",
+  "description": "Zczytywanie numeru do zakładki",
+  "main": "index.js",
+  "author": "TyDraniu",
+  "engines": {
+    "firefox": ">=33.0a1"
+  },
+  "license": "MIT"
+}
