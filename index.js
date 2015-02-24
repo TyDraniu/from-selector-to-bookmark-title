@@ -19,7 +19,9 @@ setInterval(function () {
 		function bookmarkList(bookmarks) {
 			for (i in bookmarks) {
 			  console.log("bookmark: " + bookmarks[i].title);
-			  bookmarks[i].title = message;
+			  if (message != null) {
+				bookmarks[i].title = message;
+			  }
 			};
 			save(bookmarks).on("data", function (item, inputItem) {
 			  // Each item in `bookmarks` has its own `data` event
