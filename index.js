@@ -1,10 +1,19 @@
-var self = require('sdk/self');
-var data = require("sdk/self").data;
-var { setInterval } = require("sdk/timers");
+var self = require("sdk/self");
+var data = self.data;
+var pws = require("sdk/page-worker");
+var { setInterval, clearInterval } = require("sdk/timers");
+var inter = require("sdk/simple-prefs").prefs["interval"];
 
+function onPrefChange(prefName) {
+		inter = require("sdk/simple-prefs").prefs[prefName];
+		console.log("The preference " + prefName + " value has changed to " + inter);
+		clearInterval(timer);
+		timer = setInterval(p, inter);
+}
+require("sdk/simple-prefs").on("interval", onPrefChange);
 
-setInterval(function () {
-	let pageWorker = require("sdk/page-worker").Page({
+function p() {
+	let pageWorker = pws.Page({
 	  contentScriptFile: data.url("script.js"),
 	  contentURL: "http://mozillapl.org/forum/index.php",
 	  contentScriptWhen: "ready"
@@ -13,7 +22,7 @@ setInterval(function () {
 	pageWorker.on("message", function(message) {
 		let { search, UNSORTED, save } = require("sdk/places/bookmarks");
 		
-	//query places/bookmarks
+		//query places/bookmarks
 		search({ query: "mozillapl.org" }, { sort: "title" }).on("end", bookmarkList );
 		
 		function bookmarkList(bookmarks) {
@@ -21,18 +30,16 @@ setInterval(function () {
 			  console.log("bookmark: " + bookmarks[i].title);
 			  if (message != null) {
 				bookmarks[i].title = message;
+				save(bookmarks);
+				//console.log("Now waiting " + inter);
 			  }
 			};
-			save(bookmarks).on("data", function (item, inputItem) {
-			  // Each item in `bookmarks` has its own `data` event
-			}).on("end", function (results, inputResults) {
-			  // `results` is an array of items saved in the same order
-			  // as they were passed in.
-			});
 		};
 	});
 	
-}, 60000);
+}
+
+var timer = setInterval(p, inter);
 	  
 
 

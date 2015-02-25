@@ -2,11 +2,19 @@
   "title": "Post number",
   "name": "post-number",
   "version": "0.0.1",
-  "description": "Zczytywanie numeru do zakładki",
+  "description": "Reading DOM element and saving it as bookmark title",
   "main": "index.js",
   "author": "TyDraniu",
   "engines": {
-    "firefox": ">=33.0a1"
+    "firefox": ">=38.0a1"
   },
-  "license": "MIT"
+  "license": "MIT",
+      "preferences": [
+    {
+        "description": "Number of miliseconds between check",
+        "name": "interval",
+        "type": "integer",
+        "value": 60000,
+        "title": "Number of ms"
+    }]
 }
