@@ -18,7 +18,7 @@ function p() {
 	  contentURL: "http://mozillapl.org/forum/index.php",
 	  contentScriptWhen: "ready"
 	  });
-	  
+	
 	pageWorker.on("message", function(message) {
 		let { search, UNSORTED, save } = require("sdk/places/bookmarks");
 		
@@ -30,16 +30,13 @@ function p() {
 			  console.log("bookmark: " + bookmarks[i].title);
 			  if (message != null) {
 				bookmarks[i].title = message;
-				save(bookmarks);
+				save(bookmark[i]);
 				//console.log("Now waiting " + inter);
 			  }
 			};
+			pageWorker.destroy();
 		};
 	});
-	
 }
 
 var timer = setInterval(p, inter);
-	  
-
-
