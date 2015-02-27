@@ -30,7 +30,7 @@ function p() {
 			  console.log("bookmark: " + bookmarks[i].title);
 			  if (message != null) {
 				bookmarks[i].title = message;
-				save(bookmark[i]);
+				save(bookmarks[i]);
 				//console.log("Now waiting " + inter);
 			  }
 			};
