@@ -20,7 +20,7 @@ function p() {
 	  });
 	
 	pageWorker.on("message", function(message) {
-		let { search, UNSORTED, save } = require("sdk/places/bookmarks");
+		let { search, save } = require("sdk/places/bookmarks");
 		
 		//query places/bookmarks
 		search({ query: "mozillapl.org" }, { sort: "title" }).on("end", bookmarkList );

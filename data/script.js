@@ -4,11 +4,11 @@ try {
 	var selector = document.querySelector('#page-body > P:last-child > STRONG:first-child');
 
 	if (selector != null) {
-		console.log("gpn(): " + selector.innerHTML);
-		return selector.innerHTML;
+		//console.log("gpn(): " + selector.textContent);
+		return selector.textContent;
 	}
 	else {
-		console.exception("Brak selektora");
+		console.exception("Selector is missing");
 		return null;
 	}
 }
