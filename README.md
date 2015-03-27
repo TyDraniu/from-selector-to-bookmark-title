@@ -9,11 +9,11 @@ Works with FF38 and higher.
 5. Set your preferences
 
 ## Exemplary preferences
-http://money.cnn.com/data/markets/
-SPAN[data-ticker-name="Nasdaq"][class="ticker-name-change"]
+	http://money.cnn.com/data/markets/
+	SPAN[data-ticker-name="Nasdaq"][class="ticker-name-change"]
 
-https://indices-globalmarkets.bnpparibas.com/product.aspx?id=4lWJxGH4k1jBgdLsFB7sSQ==
-#ctl00_MainContentPlaceholder_ucSubProduct_divClosingprice
+	https://indices-globalmarkets.bnpparibas.com/product.aspx?id=4lWJxGH4k1jBgdLsFB7sSQ==
+	#ctl00_MainContentPlaceholder_ucSubProduct_divClosingprice
 
-http://mozillapl.org/forum/index.php
-#page-body > P:last-child > STRONG:first-child
+	http://mozillapl.org/forum/index.php
+	#page-body > P:last-child > STRONG:first-child
