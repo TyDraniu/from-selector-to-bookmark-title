@@ -1,7 +1,7 @@
 {
   "title": "DOM element as a bookmark",
   "name": "post-number",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Reading DOM element and saving it as bookmark title",
   "main": "index.js",
   "author": "TyDraniu",
@@ -10,11 +10,26 @@
   },
   "license": "MIT",
       "preferences": [
-    {
+	{
+        "description": "Your URL with source data",
+        "name": "sourceURL",
+        "type": "string",
+        "value": "http://mozillapl.org/forum/index.php",
+        "title": "Source URL"
+    },
+	{
+        "description": "Page selector to display on the Bookmarks Toolbar",
+        "name": "selector",
+        "type": "string",
+        "value": "#page-body > P:last-child > STRONG:first-child",
+        "title": "Selector"
+    },
+	{
         "description": "Number of miliseconds between checks",
         "name": "interval",
         "type": "integer",
         "value": 60000,
         "title": "Number of ms"
-    }]
+    }
+	]
 }

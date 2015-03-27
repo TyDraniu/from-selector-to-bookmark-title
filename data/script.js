@@ -1,14 +1,14 @@
-﻿function getPostNumber()
+﻿function getPostNumber(sel)
 {
 try {
-	var selector = document.querySelector('#page-body > P:last-child > STRONG:first-child');
+	var selector = document.querySelector(sel);
 
 	if (selector != null) {
 		//console.log("gpn(): " + selector.textContent);
 		return selector.textContent;
 	}
 	else {
-		console.exception("Selector is missing");
+		console.exception("Missing selector");
 		return null;
 	}
 }
@@ -18,4 +18,6 @@ catch (e) {
 	}
 };
 
-self.postMessage(getPostNumber(), "*");
+
+//console.log("selector(): " + self.options.sel);
+self.postMessage(getPostNumber(self.options.sel), "*");
