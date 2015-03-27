@@ -1,7 +1,7 @@
 {
-  "title": "Post number",
+  "title": "DOM element as a bookmark",
   "name": "post-number",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Reading DOM element and saving it as bookmark title",
   "main": "index.js",
   "author": "TyDraniu",
@@ -11,7 +11,7 @@
   "license": "MIT",
       "preferences": [
     {
-        "description": "Number of miliseconds between check",
+        "description": "Number of miliseconds between checks",
         "name": "interval",
         "type": "integer",
         "value": 60000,
