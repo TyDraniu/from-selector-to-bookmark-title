@@ -10,7 +10,6 @@ var sourceURL = preferences.prefs["sourceURL"];
 
 function onPrefChange(prefName) {
 		var prefValue = preferences.prefs[prefName];
-		console.log("The preference " + prefName + " value has changed to " + prefValue);
 		clearInterval(timer);
 		inter = preferences.prefs["interval"];
 		sel = preferences.prefs["selector"];
@@ -36,7 +35,6 @@ function p() {
 		
 		function bookmarkList(bookmarks) {
 			for (i in bookmarks) {
-			  console.log("bookmark: " + bookmarks[i].title);
 			  if (message != null) {
 				bookmarks[i].title = message;
 				save(bookmarks[i]);
@@ -45,7 +43,6 @@ function p() {
 			pageWorker.destroy();
 		};
 	});
-	//console.log("Now waiting " + inter);
 }
 
 var timer = setInterval(p, inter);

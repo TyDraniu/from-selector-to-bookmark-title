@@ -4,7 +4,6 @@ try {
 	var selector = document.querySelector(sel);
 
 	if (selector != null) {
-		//console.log("gpn(): " + selector.textContent);
 		return selector.textContent;
 	}
 	else {
@@ -18,6 +17,4 @@ catch (e) {
 	}
 };
 
-
-//console.log("selector(): " + self.options.sel);
 self.postMessage(getPostNumber(self.options.sel), "*");
