@@ -9,7 +9,6 @@ var sel = preferences.prefs["selector"];
 var sourceURL = preferences.prefs["sourceURL"];
 
 function onPrefChange(prefName) {
-		var prefValue = preferences.prefs[prefName];
 		clearInterval(timer);
 		inter = preferences.prefs["interval"];
 		sel = preferences.prefs["selector"];
