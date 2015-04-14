@@ -37,7 +37,7 @@ function p() {
 		function bookmarkList(bookmarks) {
 			for (i in bookmarks) {
 			  if (message != null) {
-				bookmarks[i].title = message;
+				bookmarks[i].title = message.trim();
 				save(bookmarks[i]);
 			  }
 			};
