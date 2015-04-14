@@ -7,13 +7,15 @@ var preferences = require("sdk/simple-prefs");
 var inter = preferences.prefs["interval"];
 var sel = preferences.prefs["selector"];
 var sourceURL = preferences.prefs["sourceURL"];
+const SECOND = 1000;
 
 function onPrefChange(prefName) {
 		clearInterval(timer);
 		inter = preferences.prefs["interval"];
 		sel = preferences.prefs["selector"];
 		sourceURL = preferences.prefs["sourceURL"];
-		timer = setInterval(p, inter);
+		
+		timer = setInterval(p, ((inter < 20) ? 20 : inter) * SECOND);
 }
 
 preferences.on("", onPrefChange);
@@ -44,4 +46,4 @@ function p() {
 	});
 }
 
-var timer = setInterval(p, inter);
+var timer = setInterval(p, ((inter < 20) ? 20 : inter) * SECOND);

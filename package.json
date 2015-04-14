@@ -25,11 +25,11 @@
         "title": "Selector"
     },
 	{
-        "description": "Number of miliseconds between checks",
+        "description": "Number of seconds between checks (min = 20s)",
         "name": "interval",
         "type": "integer",
-        "value": 60000,
-        "title": "Number of ms"
+        "value": 60,
+        "title": "Number of seconds"
     }
 	]
 }
