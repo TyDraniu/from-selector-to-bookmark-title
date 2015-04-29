@@ -1,7 +1,7 @@
 {
   "title": "DOM element as a bookmark",
   "name": "post-number",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Reading DOM element and saving it as bookmark title",
   "main": "index.js",
   "author": "TyDraniu",
