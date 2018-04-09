@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+	<style type="text/css">
+		body {
+			background-color: #FBFBFB;
+		}
+		input {
+			margin-bottom: 5px;
+		}
+	</style>
+  </head>
+
+<body>
+  <h1>Options:</h1>
+
+  <form>
+      <label>Your URL with source data:</label><br />
+      <input type="url" id="url" placeholder="Source URL" size="100"><br />
+      <label>Page selector to display on the Bookmarks Toolbar:</label><br />
+      <input type="text" id="selector" placeholder="Selector" size="100"><br />
+      <label>Number of seconds between checks (min = 20s):</label><br />
+      <input type="number" id="interval" min="20" max="36000"><br />
+      <button type="submit">Save</button>
+  </form>
+  <script src="options.js"></script>
+</body>
+</html>
